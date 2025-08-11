@@ -37,6 +37,7 @@ def create_socket(tube_diameter, length, thickness, ribs=False):
             rib = create_rib()
             # Position the rib at equal intervals along the length of the socket
             rib = rib.translate((0, 0, i * (length*(2/3) / num_ribs)))
+            rib = rib.edges(">Z").chamfer(1.2)
             socket = socket.union(rib)
     # Cut the hole in the socket
 
