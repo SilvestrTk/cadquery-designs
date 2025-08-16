@@ -5,7 +5,7 @@ from ocp_vscode import show_object
 # Parameters
 text = "+ >>> -"
 radius = 10
-font_size = 3
+font_size = 4
 font = "Arial"
 
 # Calculate angle per character
@@ -23,7 +23,7 @@ for i, char in enumerate(text):
     y = radius * math.sin(math.radians(angle))
     # Place each character and rotate it tangentially
     char_obj = cq.Workplane("XY").transformed(offset=(x, y, 0), rotate=(0, 0, angle + 90)).text(
-        char, font_size, 1, font=font, kind="regular"
+        char, font_size, 0.6, font=font, kind="regular"
     )
     result = result.add(char_obj)
 
